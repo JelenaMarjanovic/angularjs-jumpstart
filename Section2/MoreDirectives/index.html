@@ -1,0 +1,38 @@
+<!doctype html>
+<html data-ng-app>
+
+<head>
+    <title>More on Directives</title>
+    <link href="./styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<!--
+    ng-cloak
+    ng-switch
+    ng-class
+    ng-show
+-->
+
+<body data-ng-init="data={name:'James', isVisible: true, loggedIn: false, status: 'red'}">
+    <div data-ng-cloak data-ng-switch on="data.loggedIn">
+        <div>
+            <div data-ng-switch-when="true" data-ng-class="data.status">
+                Welcome {{ data.name }}
+            </div>
+
+            <div data-ng-switch-default data-ng-class="data.status">Login</div>
+        </div>
+        <br>
+        <div data-ng-show="data.isVisible">
+            Name: <input type="text" ng-model="data.name">
+            {{ data.name }}
+        </div>
+        <br>
+        <button data-ng-switch-default data-ng-click="data.loggedIn=true; data.status='navy'">Login</button>
+        <button data-ng-switch-when="true" data-ng-click="data.loggedIn=false; data.status='red'">Logut</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+</body>
+
+</html>
