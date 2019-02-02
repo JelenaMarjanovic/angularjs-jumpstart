@@ -1,9 +1,9 @@
 .red {
-    color: red;
+	color: red;
 }
 
 .navy {
-    color: navy;
+	color: navy;
 }
 
 /* Needs to be added when loading script at the bottom of body within HTML */
@@ -14,5 +14,5 @@
 [x-ng-cloak],
 .ng-cloak,
 .x-ng.ng-cloak {
-    display: none !important;
+	display: none !important;
 }
