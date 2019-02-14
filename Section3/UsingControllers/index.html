@@ -6,7 +6,7 @@
   <link href="./styles.css" rel="stylesheet" type="text/css">
 </head>
 
-<body data-ng-controller="CustomersController as ctrl">
+<body data-ng-controller="CustomersController">
   <h2>Customers</h2>
   Filter: <input type="text" data-ng-model="customerFilter.name">
 
@@ -15,15 +15,15 @@
   <table>
     <thead>
       <tr>
-        <th data-ng-click="ctrl.doSort('name')">Name</th>
-        <th data-ng-click="ctrl.doSort('city')">City</th>
-        <th data-ng-click="ctrl.doSort('orderTotal')">Order Total</th>
-        <th data-ng-click="ctrl.doSort('joined')">Joined</th>
+        <th data-ng-click="doSort('name')">Name</th>
+        <th data-ng-click="doSort('city')">City</th>
+        <th data-ng-click="doSort('orderTotal')">Order Total</th>
+        <th data-ng-click="doSort('joined')">Joined</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr data-ng-repeat="cust in ctrl.customers | filter:customerFilter | orderBy:ctrl.sortBy:ctrl.reverse">
+      <tr data-ng-repeat="cust in customers | filter:customerFilter | orderBy:sortBy:reverse">
         <td>{{ cust.name }}</td>
         <td>{{ cust.city }}</td>
         <td>{{ cust.orderTotal | currency }}</td>
@@ -34,7 +34,7 @@
 
   <br />
 
-  <span>Total customers: {{ ctrl.customers.length }}</span>
+  <span>Total customers: {{ customers.length }}</span>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script>

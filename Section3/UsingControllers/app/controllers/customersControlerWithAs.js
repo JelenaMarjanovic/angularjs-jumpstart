@@ -1,8 +1,8 @@
-app.controller('CustomersController', function($scope) {
-  $scope.sortBy = 'name';
-  $scope.reverse = false;
+app.controller('CustomersController', function() {
+  this.sortBy = 'name';
+  this.reverse = false;
 
-  $scope.customers = [
+  this.customers = [
     {
       joined: '2000-12-02',
       name: 'John',
@@ -29,8 +29,8 @@ app.controller('CustomersController', function($scope) {
     }
   ];
 
-  $scope.doSort = function(propName) {
-    $scope.sortBy = propName;
-    $scope.reverse = !$scope.reverse;
+  this.doSort = function(propName) {
+    this.sortBy = propName;
+    this.reverse = !this.reverse;
   };
 });
