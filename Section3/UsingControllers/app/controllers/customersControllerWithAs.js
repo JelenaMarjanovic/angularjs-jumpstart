@@ -1,4 +1,5 @@
-app.controller('CustomersController', function() {
+// customersApp.controller('CustomersController', function() {
+angular.module('customersApp').controller('CustomersController', function() {
   this.sortBy = 'name';
   this.reverse = false;
 
