@@ -10,6 +10,7 @@ Filter: <input type="text" data-ng-model="customerFilter.name">
       <th data-ng-click="doSort('city')">City</th>
       <th data-ng-click="doSort('orderTotal')">Order Total</th>
       <th data-ng-click="doSort('joined')">Joined</th>
+      <th>&nbsp;</th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@ Filter: <input type="text" data-ng-model="customerFilter.name">
       <td>{{ cust.city }}</td>
       <td>{{ cust.orderTotal | currency }}</td>
       <td>{{ cust.joined | date }}</td>
+      <td><a href="#/orders/{{ cust.id }}">View Orders</a></td>
     </tr>
   </tbody>
 </table>
